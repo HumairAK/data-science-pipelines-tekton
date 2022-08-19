@@ -1,16 +1,10 @@
 approvers:
- - animeshsingh
- - ckadner
- - Tomcli
- - fenglixa
- - pugangxa
- - scrapcodes
- - yhwang
+- anishasthana
+- gmfrasca
+- rimolive
+
 reviewers:
- - ckadner
- - Tomcli
- - fenglixa
- - pugangxa
- - jinchihe
- - scrapcodes
- - yhwang
+- anishasthana
+- gmfrasca
+- rimolive
+- DharmitD
