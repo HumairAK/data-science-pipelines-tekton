@@ -1,16 +1,16 @@
 approvers:
- - animeshsingh
- - ckadner
- - Tomcli
- - fenglixa
- - pugangxa
- - scrapcodes
- - yhwang
+  - accorvin
+  - anishasthana
+  - DharmitD
+  - gmfrasca
+  - gregsheremeta
+  - harshad16
+  - HumairAK
+  - rimolive
 reviewers:
- - ckadner
- - Tomcli
- - fenglixa
- - pugangxa
- - jinchihe
- - scrapcodes
- - yhwang
+  - DharmitD
+  - gmfrasca
+  - gregsheremeta
+  - harshad16
+  - HumairAK
+  - rimolive
