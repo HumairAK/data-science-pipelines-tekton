@@ -46,13 +46,6 @@ resources:
   - ./serviceaccounts/ds-pipeline.yaml
   - ./serviceaccounts/pipeline-runner.yaml
 
-  # Deployments
-  - ./deployments/ml-pipeline-persistenceagent.yaml
-  - ./deployments/ml-pipeline-scheduledworkflow.yaml
-  - ./deployments/ml-pipeline-viewer-crd.yaml
-  - ./deployments/ml-pipeline-visualizationserver.yaml
-  - ./deployments/ml-pipeline.yaml
-
   # Image Streams
   - ./imagestreams/visualization-server.yaml
 
