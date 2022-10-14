@@ -1,0 +1,9 @@
+Cython
+packaging>=20.0
+pyparsing!=3.0.5,>=2.0.2
+setuptools
+setuptools>=40.8.0
+setuptools_scm
+tomli>=1.0.0
+typing-extensions
+wheel
