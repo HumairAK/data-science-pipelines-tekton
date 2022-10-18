@@ -234,7 +234,7 @@ export class SideNav extends React.Component<SideNavInternalProps, SideNavState>
         tagName: tagName || 'unknown',
         commitHash: commitHash ? commitHash.substring(0, 7) : 'unknown',
         commitUrl:
-          'https://www.github.com/opendatahub-io/data-science-pipelines' +
+          'https://www.github.com/red-hat-data-services/data-science-pipelines' +
           (commitHash && commitHash !== 'unknown' ? `/commit/${commitHash}` : ''),
         date: buildInfo.buildDate
           ? new Date(buildInfo.buildDate).toLocaleDateString('en-US')

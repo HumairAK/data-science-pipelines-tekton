@@ -132,9 +132,15 @@ export const RoutePageFactory = {
 };
 
 export const ExternalLinks = {
+<<<<<<< HEAD
   DOCUMENTATION: 'https://www.kubeflow.org/docs/pipelines/sdk/pipelines-with-tekton/',  // TODO: update?
   GITHUB: 'https://github.com/opendatahub-io/data-science-pipelines',
   GITHUB_ISSUE: 'https://github.com/opendatahub-io/data-science-pipelines/issues/new/choose',
+=======
+  DOCUMENTATION: 'https://access.redhat.com/documentation/en-us/red_hat_openshift_data_science/1'
+  GITHUB: 'https://github.com/red-hat-data-services/data-science-pipelines',
+  GITHUB_ISSUE: 'https://github.com/red-hat-data-services/data-science-pipelines/issues/new/choose',
+>>>>>>> 679bf2c84 (Update fork references from ODH to RHDS)
 };
 
 export interface DialogProps {

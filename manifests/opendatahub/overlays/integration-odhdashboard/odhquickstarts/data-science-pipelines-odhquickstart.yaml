@@ -13,7 +13,7 @@ spec:
   introduction: |-
     ### This quick start shows you how to create a Data Science Pipeline.
     Open Data Hub lets you run Data Science Pipelines in a scalable OpenShift hybrid cloud environment.
-    This quickstart shows you how to compile, create and run a simple example pipeline execution using the Kubeflow Pipelines Python SDK and Data Science Pipelines UI.
+    This quickstart shows you how to compile, create and run a simple example pipeline execution using the Pipelines Python SDK and Data Science Pipelines UI.
   tasks:
     - title: Launch Data Science Pipelines
       description: |-
@@ -33,9 +33,9 @@ spec:
 
     - title: Install Python SDK and compile sample pipeline
       description: |-
-        ### Install the Kubeflow Pipelines Python SDK
-        1. Follow the [Kubeflow Pipelines Tekton Python SDK Installation instructions](https://github.com/opendatahub-io/data-science-pipelines/blob/master/samples/README.md#prerequisites)
-        2. Download, clone or copy the [flip-coin example pipeline](https://github.com/opendatahub-io/data-science-pipelines/blob/master/samples/flip-coin/condition.py)
+        ### Install the Pipelines Python SDK
+        1. Follow the [Pipelines Tekton Python SDK Installation instructions](https://github.com/red-hat-data-services/data-science-pipelines/blob/master/samples/README.md#prerequisites)
+        2. Download, clone or copy the [flip-coin example pipeline](https://github.com/red-hat-data-services/data-science-pipelines/blob/master/samples/flip-coin/condition.py)
         3. Compile the python pipeline defintion into a Tekton YAML:
         ```
         python condition.py
@@ -46,7 +46,7 @@ spec:
           Is there now a `condition.yaml` file in the directory you downloaded `condition.py` from?
         failedTaskHelp: This task is not verified yet. Try the task again.
       summary:
-        success: You have installed the Kubeflow Pipelines Tekton SDK and compiled a sample pipeline definition into a Tekton yaml
+        success: You have installed the Pipelines Tekton SDK and compiled a sample pipeline definition into a Tekton yaml
         failed: Try the steps again.
 
     - title: Create a Pipeline
