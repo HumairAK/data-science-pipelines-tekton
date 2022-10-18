@@ -28,8 +28,10 @@ spec:
   source:
     type: Git
     git:
-      uri: "https://github.com/red-hat-data-services/ml-pipelines"
+      uri: "https://github.com/red-hat-data-services/data-science-pipelines"
       ref: master
+  runPolicy: Serial
   triggers:
+    - type: ConfigChange
     - type: ImageChange
       imageChange: {}
