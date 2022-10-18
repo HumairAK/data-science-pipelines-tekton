@@ -22,7 +22,7 @@ resources:
   - ./rolebindings/ds-pipeline-viewer-crd-binding.yaml
   - ./rolebindings/ds-pipeline.yaml
   - ./rolebindings/pipeline-runner-binding.yaml
-  - ./rolebindings/ml-pipeline-visualizationserver.yaml
+  - ./rolebindings/ds-pipeline-visualizationserver.yaml
 
   # Roles
   - ./roles/ds-pipeline-scheduledworkflow-role.yaml
