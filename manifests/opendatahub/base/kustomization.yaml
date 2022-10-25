@@ -113,13 +113,13 @@ configurations:
 images:
   - name: persistenceagent
     newName: quay.io/modh/odh-ml-pipelines-persistenceagent-container
-    newTag: v1.18.0-2
+    newTag: v1.18.0-8
   - name: scheduledworkflow
     newName: quay.io/modh/odh-ml-pipelines-scheduledworkflow-container
-    newTag: v1.18.0-2
+    newTag: v1.18.0-8
   - name: viewer-crd-controller
     newName: quay.io/modh/odh-ml-pipelines-viewercontroller-container
-    newTag: v1.18.0-2
+    newTag: v1.18.0-8
   - name: api-server
     newName: quay.io/modh/odh-ml-pipelines-api-server-container
-    newTag: v1.18.0-2
+    newTag: v1.18.0-8
