@@ -19,6 +19,11 @@ spec:
       - image: gcr.io/ml-pipeline/viewer-crd-controller:dummy
         imagePullPolicy: Always
         name: ml-pipeline-viewer-crd
+        command:
+          - controller
+          - "-logtostderr=true"
+          - "-max_num_viewers=50"
+          - "--namespace=kfpv2"
         env:
         - name: MAX_NUM_VIEWERS
           value: "50"

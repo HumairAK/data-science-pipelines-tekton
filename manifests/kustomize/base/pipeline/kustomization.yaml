@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
-  - metadata-writer
+namespace: kfpv2
+#bases:
+#  - metadata-writer
 resources:
   - ml-pipeline-apiserver-deployment.yaml
   - ml-pipeline-apiserver-role.yaml
@@ -35,6 +36,7 @@ resources:
   - container-builder-sa.yaml
   - viewer-sa.yaml
   - kfp-launcher-configmap.yaml
+  - pipeline-install-config.yaml
 images:
   - name: gcr.io/ml-pipeline/api-server
     newTag: 2.0.0-alpha.6
