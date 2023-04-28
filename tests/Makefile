@@ -3,7 +3,7 @@ GIT_ORG=opendatahub-io
 GIT_BRANCH=master
 ODHPROJECT=opendatahub
 # Specify the repo and git ref/branch to use for cloning ods-ci
-ODS_CI_REPO=https://github.com/red-hat-data-services/ods-ci
+ODS_CI_REPO=https://github.com/opendatahub-io/ods-ci
 ODS_CI_GITREF=master
 OC_CLI_URL=https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp/latest/openshift-client-linux.tar.gz
 OPENSHIFT_USER=

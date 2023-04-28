@@ -4,7 +4,7 @@ FROM quay.io/centos/centos:stream8
 ARG CHROMEDRIVER_VER=104.0.5112.79
 ARG ORG=opendatahub-io
 ARG BRANCH=master
-ARG ODS_CI_REPO=https://github.com/red-hat-data-services/ods-ci
+ARG ODS_CI_REPO=https://github.com/opendatahub-io/ods-ci
 ARG ODS_CI_GITREF=releases/1.7.0-5
 ARG OC_CLI_URL=https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp/latest/openshift-client-linux.tar.gz
 

@@ -20,12 +20,14 @@
 # This image should be in sync with image in backend/src/apiserver/visualization/update_requirements.sh.
 FROM tensorflow/tensorflow:2.5.1
 
-USER root
+RUN apt-get update \
+  && apt-get install -y wget curl tar openssl
 
-RUN dnf update -y && \
-    dnf install -y wget curl tar openssl && \
-    dnf clean -y all && \
-    rm -rf /var/cache/dnf
+RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
+RUN mkdir -p /usr/local/gcloud
+RUN tar -C /usr/local/gcloud -xf /tmp/google-cloud-sdk.tar.gz
+RUN /usr/local/gcloud/google-cloud-sdk/install.sh
+ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 WORKDIR /src
 
@@ -35,16 +37,4 @@ RUN python3 -m pip install --upgrade pip && python3 -m pip install -r requiremen
 
 COPY backend/src/apiserver/visualization /src
 
-USER 1001
-
 ENTRYPOINT [ "python3", "server.py" ]
-
-LABEL com.redhat.component="odh-ml-pipelines-visualizationserver-container" \
-      name="managed-open-data-hub/odh-ml-pipelines-visualizationserver-container-rhel8" \
-      version="${CI_CONTAINER_VERSION}" \
-      release="${CI_CONTAINER_RELEASE}" \
-      summary="odh-ml-pipelines-visualizationserver" \
-      io.openshift.expose-services="" \
-      io.k8s.display-name="odh-ml-pipelines-visualizationserver" \
-      maintainer="['managed-open-data-hub@redhat.com']" \
-      description="odh-ml-pipelines-visualizationserver"

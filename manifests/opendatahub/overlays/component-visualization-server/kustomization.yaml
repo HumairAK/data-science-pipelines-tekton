@@ -32,5 +32,5 @@ resources:
 
 images:
   - name: viewer-crd-controller
-    newName: quay.io/modh/odh-ml-pipelines-viewercontroller-container
-    newTag: v1.18.0-8
+    newName: gcr.io/ml-pipeline/viewer-crd-controller
+    newTag: 1.7.0

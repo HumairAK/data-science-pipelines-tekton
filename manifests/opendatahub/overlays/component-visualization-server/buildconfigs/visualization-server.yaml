@@ -28,7 +28,7 @@ spec:
   source:
     type: Git
     git:
-      uri: "https://github.com/red-hat-data-services/data-science-pipelines"
+      uri: "https://github.com/opendatahub-io/data-science-pipelines"
       ref: master
   runPolicy: Serial
   triggers:
