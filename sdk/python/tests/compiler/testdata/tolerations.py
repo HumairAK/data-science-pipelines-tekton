@@ -30,7 +30,7 @@ def tolerations(
       - {name: downloaded, type: String}
     implementation:
       container:
-        image: busybox
+        image: registry.access.redhat.com/ubi8/ubi-minimal
         command:
         - sh
         - -c

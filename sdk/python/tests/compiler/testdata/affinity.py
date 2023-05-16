@@ -20,7 +20,7 @@ name: echo
 description: echo component
 implementation:
   container:
-    image: busybox
+    image: registry.access.redhat.com/ubi8/ubi-minimal
     command:
     - sh
     - -c

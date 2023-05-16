@@ -46,7 +46,7 @@ spec:
           command:
           - sh
           - -c
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         results:
         - name: downloaded
           type: string
@@ -56,7 +56,7 @@ spec:
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             pipelines.kubeflow.org/component_spec_digest: '{"name": "download", "outputs":
-              [{"name": "downloaded", "type": "String"}], "version": "download@sha256=efb8f7672208579e11f74f184af68742c8d27421ef95f4db23a3b5f55641d850"}'
+              [{"name": "downloaded", "type": "String"}], "version": "download@sha256=2165924e60af5f23edce6f4fba593e54a4262e9625ca86642abf3f0a04145036"}'
   taskRunSpecs:
   - pipelineTaskName: download
     taskPodTemplate:

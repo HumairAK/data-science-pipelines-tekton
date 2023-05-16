@@ -119,13 +119,13 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['custom.tekton.dev/originalPipelineRun']
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: output-taskrun-name
           command:
           - sh
           - -ec
           - echo -n "$(context.taskRun.name)" > "$(results.taskrun-name.path)"
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-results-artifacts
           command:
           - sh
@@ -209,13 +209,13 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['custom.tekton.dev/originalPipelineRun']
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: output-taskrun-name
           command:
           - sh
           - -ec
           - echo -n "$(context.taskRun.name)" > "$(results.taskrun-name.path)"
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-results-artifacts
           command:
           - sh
@@ -317,13 +317,13 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['custom.tekton.dev/originalPipelineRun']
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: output-taskrun-name
           command:
           - sh
           - -ec
           - echo -n "$(context.taskRun.name)" > "$(results.taskrun-name.path)"
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-results-artifacts
           command:
           - sh
@@ -468,7 +468,7 @@ spec:
     - name: consume-anything-as-file
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -515,7 +515,7 @@ spec:
     - name: consume-something-as-file
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -562,7 +562,7 @@ spec:
     - name: consume-string-as-file
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -861,7 +861,7 @@ spec:
     - name: consume-anything-as-file-2
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -912,7 +912,7 @@ spec:
     - name: consume-anything-as-file-3
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -963,7 +963,7 @@ spec:
     - name: consume-anything-as-file-4
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -1014,7 +1014,7 @@ spec:
     - name: consume-something-as-file-2
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -1065,7 +1065,7 @@ spec:
     - name: consume-something-as-file-3
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -1116,7 +1116,7 @@ spec:
     - name: consume-string-as-file-2
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh
@@ -1167,7 +1167,7 @@ spec:
     - name: consume-string-as-file-3
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh

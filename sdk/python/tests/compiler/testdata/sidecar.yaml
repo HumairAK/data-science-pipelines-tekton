@@ -48,7 +48,7 @@ spec:
           command:
           - sh
           - -c
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         results:
         - name: download
           type: string
@@ -58,7 +58,7 @@ spec:
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             pipelines.kubeflow.org/component_spec_digest: '{"name": "download", "outputs":
-              [{"name": "download", "type": "String"}], "version": "download@sha256=7687fa4b9d3e529fa3152ee002ac5c64ceb2e1235147b04f4f6cee8b412360ea"}'
+              [{"name": "download", "type": "String"}], "version": "download@sha256=b108303c8bd8bce2e24c8717eb5ba067199ebd8a94d9c0e3abcbe66da09c71a4"}'
     - name: echo
       params:
       - name: download-download

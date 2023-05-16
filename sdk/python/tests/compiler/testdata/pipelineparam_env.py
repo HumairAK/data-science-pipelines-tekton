@@ -20,7 +20,7 @@ from kfp import dsl
 def echo_op(port_number):
     return dsl.ContainerOp(
         name='echo',
-        image='busybox',
+        image='registry.access.redhat.com/ubi8/ubi-minimal',
         command=['sh', '-c'],
         arguments=['echo "Got scheduled"']
     ).container.add_env_variable(V1EnvVar(name='PORT', value=port_number))

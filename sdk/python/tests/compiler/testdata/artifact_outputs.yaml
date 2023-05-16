@@ -66,13 +66,13 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.labels['custom.tekton.dev/originalPipelineRun']
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: output-taskrun-name
           command:
           - sh
           - -ec
           - echo -n "$(context.taskRun.name)" > "$(results.taskrun-name.path)"
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-results-artifacts
           command:
           - sh

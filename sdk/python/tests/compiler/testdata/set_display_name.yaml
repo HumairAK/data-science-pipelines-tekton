@@ -44,11 +44,11 @@ spec:
           command:
           - sh
           - -c
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         metadata:
           labels:
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             pipelines.kubeflow.org/task_display_name: Hello World
             pipelines.kubeflow.org/component_spec_digest: '{"name": "echo", "outputs":
-              [], "version": "echo@sha256=14be762d0ac645b725d45e703104370b0816a8b2b9abf44ca01c405e3bbf45c3"}'
+              [], "version": "echo@sha256=cb16ad5fb9520d21ac18103e8de2f9c904d309c5178d6a52266251b3bde16ef5"}'

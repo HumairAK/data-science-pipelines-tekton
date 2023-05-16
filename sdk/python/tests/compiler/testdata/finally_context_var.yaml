@@ -108,7 +108,7 @@ spec:
           command:
           - any-task
           image: dspipelines/any-sequencer:latest
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-results
           command:
           - sh
@@ -213,7 +213,7 @@ spec:
                   command:
                   - any-task
                   image: dspipelines/any-sequencer:latest
-                - image: busybox
+                - image: registry.access.redhat.com/ubi8/ubi-minimal
                   name: copy-results
                   command:
                   - sh

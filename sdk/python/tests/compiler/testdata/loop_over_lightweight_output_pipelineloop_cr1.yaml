@@ -32,7 +32,7 @@ spec:
           command:
           - echo
           - $(inputs.params.produce-list-data_list-loop-item)
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         params:
         - name: produce-list-data_list-loop-item
           type: string
@@ -43,7 +43,7 @@ spec:
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             pipelines.kubeflow.org/component_spec: '{"implementation": {"container":
-              {"command": ["echo", {"inputValue": "data"}], "image": "busybox"}},
+              {"command": ["echo", {"inputValue": "data"}], "image": "registry.access.redhat.com/ubi8/ubi-minimal"}},
               "inputs": [{"name": "data"}], "name": "Consume data"}'
             tekton.dev/template: ''
       timeout: 0s

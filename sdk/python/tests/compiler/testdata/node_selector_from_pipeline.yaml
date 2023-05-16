@@ -44,13 +44,13 @@ spec:
           command:
           - sh
           - -c
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         metadata:
           labels:
             pipelines.kubeflow.org/cache_enabled: "true"
           annotations:
             pipelines.kubeflow.org/component_spec_digest: '{"name": "echo", "outputs":
-              [], "version": "echo@sha256=e351a00f59eb0eb8d614bb41816020b768770ba7513a5b3c0c7ea5c2efa9c6d6"}'
+              [], "version": "echo@sha256=cf4644af9e986c5c744bf13c5aac9ce15a676eec514a44c271adcf15c32fa941"}'
   podTemplate:
     nodeSelector:
       kubernetes.io/os: linux

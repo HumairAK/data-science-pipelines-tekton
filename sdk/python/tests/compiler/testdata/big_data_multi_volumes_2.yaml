@@ -73,7 +73,7 @@ spec:
     - name: print-big
       taskSpec:
         steps:
-        - image: busybox
+        - image: registry.access.redhat.com/ubi8/ubi-minimal
           name: copy-inputs
           command:
           - sh

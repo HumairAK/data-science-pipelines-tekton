@@ -23,7 +23,7 @@ def echo_op():
     description: echo
     implementation:
       container:
-        image: busybox
+        image: registry.access.redhat.com/ubi8/ubi-minimal
         command:
         - sh
         - -c

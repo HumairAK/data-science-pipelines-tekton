@@ -55,7 +55,7 @@ spec:
           env:
           - name: PORT
             value: $(inputs.params.port_number)
-          image: busybox
+          image: registry.access.redhat.com/ubi8/ubi-minimal
         params:
         - name: port_number
         metadata:

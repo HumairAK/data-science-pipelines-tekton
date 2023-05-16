@@ -31,7 +31,7 @@ outputs:
 - {name: data_list, type: List}
 implementation:
   container:
-    image: busybox
+    image: registry.access.redhat.com/ubi8/ubi-minimal
     command:
     - sh
     - -c
@@ -47,7 +47,7 @@ inputs:
 - {name: data, type: Integer}
 implementation:
   container:
-    image: busybox
+    image: registry.access.redhat.com/ubi8/ubi-minimal
     command:
     - echo
     - {inputValue: iter}
