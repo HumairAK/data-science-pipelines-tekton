@@ -15,7 +15,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kfp-exithandler-webhook
+  name: kfptask-webhook
   namespace: tekton-pipelines
   labels:
     app.kubernetes.io/name: webhook
@@ -47,10 +47,10 @@ spec:
         app: tekton-pipelines-webhook
         version: "devel"
     spec:
-      serviceAccountName: kfp-exithandler-webhook
+      serviceAccountName: kfptask-webhook
       containers:
       - name: webhook
-        image: tekton-exithandler-webhook:dummy
+        image: tekton-kfptask-webhook:dummy
         env:
         - name: SYSTEM_NAMESPACE
           valueFrom:
@@ -66,9 +66,9 @@ spec:
         - name: CONFIG_LEADERELECTION_NAME
           value: config-leader-election
         - name: WEBHOOK_SERVICE_NAME
-          value: kfp-exithandler-webhook
+          value: kfptask-webhook
         - name: WEBHOOK_SECRET_NAME
-          value: kfp-exithandler-webhook-certs
+          value: kfptask-webhook-certs
         - name: METRICS_DOMAIN
           value: tekton.dev/pipeline
         ports:
@@ -101,7 +101,7 @@ metadata:
     pipeline.tekton.dev/release: "devel"
     app: tekton-pipelines-webhook
     version: "devel"
-  name: kfp-exithandler-webhook
+  name: kfptask-webhook
   namespace: tekton-pipelines
 spec:
   ports:

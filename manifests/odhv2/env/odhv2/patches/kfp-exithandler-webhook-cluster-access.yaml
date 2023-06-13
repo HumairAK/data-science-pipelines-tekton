@@ -1,0 +1,7 @@
+- op: add
+  path: /rules/0
+  value:
+    apiGroups: [ "admissionregistration.k8s.io" ]
+    resources: [ "validatingwebhookconfigurations" ]
+    resourceNames: [ "validation.webhook.exithandler.custom.tekton.dev" ]
+    verbs: [ "get", "update", "delete" ]

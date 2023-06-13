@@ -1,0 +1,151 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+  - ../../third-party/openshift-pipelines-custom-task
+  - ../../base/pipeline/cluster-scoped
+  - namespace-scoped
+
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: ClusterRole
+      name: kfp-exithandler-webhook-cluster-access
+    path: patches/kfp-exithandler-webhook-cluster-access.yaml
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: ClusterRole
+      name: kfptask-webhook-cluster-access
+    path: patches/kfptask-webhook-cluster-access.yaml
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: ClusterRole
+      name: tekton-pipelineloop-webhook-cluster-access
+    path: patches/tekton-pipelineloop-webhook-cluster-access.yaml
+#  - target:
+#      group: rbac.authorization.k8s.io
+#      version: v1
+#      kind: ClusterRole
+#      name: kfptask-controller-cluster-access
+#    path: patches/kfptask-controller-cluster-access.yaml
+#  - target:
+#      group: rbac.authorization.k8s.io
+#      version: v1
+#      kind: ClusterRole
+#      name: kfptask-controller
+#    path: patches/kfptask-controller.yaml
+
+
+
+patches:
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: ml-pipeline
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ml-pipeline-api-server
+              env:
+                - name: EXECUTIONTYPE
+                  value: PipelineRun
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: ml-pipeline-persistenceagent
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ml-pipeline-persistenceagent
+              env:
+                - name: EXECUTIONTYPE
+                  value: PipelineRun
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: ml-pipeline-scheduledworkflow
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ml-pipeline-scheduledworkflow
+              env:
+                - name: EXECUTIONTYPE
+                  value: PipelineRun
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: ml-pipeline-ui
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ml-pipeline-ui
+              env:
+                - name: POD_LOG_CONTAINER_NAME
+                  value: step-user-main
+
+
+
+labels:
+  - includeSelectors: true
+    pairs:
+      application-crd-id: kubeflow-pipelines
+images:
+  - name: gcr.io/ml-pipeline/api-server
+    newName: quay.io/hukhan/apiserver-dev
+    newTag: ffca08e6d
+  - name: gcr.io/ml-pipeline/persistenceagent
+    newName: quay.io/hukhan/persistenceagent-dev
+    newTag: ffca08e6d
+  - name: gcr.io/ml-pipeline/scheduledworkflow
+    newName: quay.io/hukhan/swf-dev
+    newTag: ffca08e6d
+  #- name: gcr.io/ml-pipeline/cache-deployer:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/cache-server:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/metadata-envoy:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/metadata-writer:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/frontend:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/viewer-crd-controller:2.0.0-beta.1
+  #- name: gcr.io/ml-pipeline/visualization-server:2.0.0-beta.1
+  #- name: gcr.io/tfx-oss-public/ml_metadata_store_server:1.5.0
+  #- name: gcr.io/ml-pipeline/minio:RELEASE.2019-08-14T20-37-41Z-license-compliance
+  #- name: gcr.io/ml-pipeline/mysql:8.0.26
+  - name: docker.io/aipipeline/persistenceagent-dev:ffca08e6d
+    newName: quay.io/hukhan/persistenceagent-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/swf-dev:ffca08e6d
+    newName: quay.io/hukhan/swf-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/apiserver-dev:ffca08e6d
+    newName: quay.io/hukhan/apiserver-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/tekton-driver-dev:ffca08e6d
+    newName: quay.io/hukhan/tekton-driver-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/tekton-exithandler-controller-dev:ffca08e6d
+    newName: quay.io/hukhan/tekton-exithandler-controller-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/tekton-exithandler-webhook-dev:ffca08e6d
+    newName: quay.io/hukhan/tekton-exithandler-webhook-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/tekton-kfptask-controller-dev:ffca08e6d
+    newName: quay.io/hukhan/tekton-kfptask-controller-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/tekton-kfptask-webhook-dev:ffca08e6d
+    newName: quay.io/hukhan/tekton-kfptask-webhook-dev
+    newTag: ffca08e6d
+  - name: docker.io/aipipeline/pipelineloop-controller:nightly
+    newName: quay.io/hukhan/pipelineloop-controller
+    newTag: nightly
+  - name: docker.io/aipipeline/pipelineloop-webhook:nightly
+    newName: quay.io/hukhan/pipelineloop-webhook
+    newTag: nightly
+

@@ -1,0 +1,7 @@
+- op: add
+  path: /rules/0
+  value:
+    apiGroups: [ "admissionregistration.k8s.io" ]
+    resources: [ "mutatingwebhookconfigurations" ]
+    resourceNames: [ "webhook.pipelineloop.custom.tekton.dev" ]
+    verbs: [ "get", "update", "delete" ]
