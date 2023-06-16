@@ -4,6 +4,7 @@ resources:
   - ../../base/pipeline/cluster-scoped
   - namespace-scoped
   - configs
+  - sccs
 
 patchesJson6902:
   - target:
@@ -24,6 +25,12 @@ patchesJson6902:
       kind: ClusterRole
       name: tekton-pipelineloop-webhook-cluster-access
     path: patches/tekton-pipelineloop-webhook-cluster-access.yaml
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: Role
+      name: kubeflow-pipelines-metadata-writer-role
+    path: patches/kubeflow-pipelines-metadata-writer.yaml
 #  - target:
 #      group: rbac.authorization.k8s.io
 #      version: v1
@@ -36,8 +43,6 @@ patchesJson6902:
 #      kind: ClusterRole
 #      name: kfptask-controller
 #    path: patches/kfptask-controller.yaml
-
-
 
 patches:
 - patch: |-
