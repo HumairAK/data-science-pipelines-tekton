@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+namespace: openshift-pipelines
+resources:
+  - config-artifact-bucket.yaml
+  - config-trusted-resources.yaml
+  - config-artifact-pvc.yaml

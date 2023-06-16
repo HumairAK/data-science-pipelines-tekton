@@ -5,3 +5,17 @@
     resources: [ "validatingwebhookconfigurations" ]
     resourceNames: [ "validation.webhook.exithandler.custom.tekton.dev" ]
     verbs: [ "get", "update", "delete" ]
+- op: add
+  path: /rules/0
+  value:
+    apiGroups: [ "admissionregistration.k8s.io" ]
+    resources: [ "mutatingwebhookconfigurations" ]
+    resourceNames: [ "webhook.exithandler.custom.tekton.dev" ]
+    verbs: [ "get", "update", "delete" ]
+- op: add
+  path: /rules/0
+  value:
+    apiGroups: [ "" ]
+    resources: [ "namespaces/finalizers" ]
+    verbs: [ "update" ]
+    resourceNames: [ "openshift-pipelines" ]

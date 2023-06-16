@@ -3,6 +3,7 @@ resources:
   - ../../third-party/openshift-pipelines-custom-task
   - ../../base/pipeline/cluster-scoped
   - namespace-scoped
+  - configs
 
 patchesJson6902:
   - target:
