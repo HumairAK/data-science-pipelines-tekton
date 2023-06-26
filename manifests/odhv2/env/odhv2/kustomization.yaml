@@ -31,18 +31,18 @@ patchesJson6902:
       kind: Role
       name: kubeflow-pipelines-metadata-writer-role
     path: patches/kubeflow-pipelines-metadata-writer.yaml
-#  - target:
-#      group: rbac.authorization.k8s.io
-#      version: v1
-#      kind: ClusterRole
-#      name: kfptask-controller-cluster-access
-#    path: patches/kfptask-controller-cluster-access.yaml
-#  - target:
-#      group: rbac.authorization.k8s.io
-#      version: v1
-#      kind: ClusterRole
-#      name: kfptask-controller
-#    path: patches/kfptask-controller.yaml
+  - target:
+      group: ""
+      version: v1
+      kind: ConfigMap
+      name: cache-config
+    path: patches/configmap_cache-config.yaml
+  - target:
+      group: ""
+      version: v1
+      kind: ConfigMap
+      name: object-store-config
+    path: patches/configmap_object-store-config.yaml
 
 patches:
 - patch: |-

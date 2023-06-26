@@ -1,0 +1,3 @@
+- op: add
+  path: /data/serviceEndpoint
+  value: "http://minio-service.odhv2:9000"

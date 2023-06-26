@@ -1,0 +1,3 @@
+- op: add
+  path: /data/host
+  value: "mysql.odhv2.svc.cluster.local"
