@@ -28,7 +28,7 @@ seLinuxContext:
 supplementalGroups:
   type: RunAsAny
 users:
-  - system:serviceaccount:kubeflow:pipeline-runner
+  - system:serviceaccount:odhv2:pipeline-runner
 volumes:
   - configMap
   - csi

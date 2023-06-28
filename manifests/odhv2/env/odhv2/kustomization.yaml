@@ -44,6 +44,12 @@ patchesJson6902:
       name: object-store-config
     path: patches/configmap_object-store-config.yaml
 
+patchesStrategicMerge:
+  - patches/deployments/ml-pipeline-apiserver-deployment.yaml
+  - patches/deployments/driver-controller.yaml
+  - patches/deployments/exit-handler.yaml
+  - patches/deployments/kfp-task.yaml
+  - patches/deployments/pipelineloop.yaml
 patches:
 - patch: |-
     apiVersion: apps/v1
@@ -107,7 +113,7 @@ labels:
 images:
   - name: gcr.io/ml-pipeline/api-server
     newName: quay.io/hukhan/apiserver-dev
-    newTag: 89d657d2a
+    newTag: 35628146f
   - name: gcr.io/ml-pipeline/persistenceagent
     newName: quay.io/hukhan/persistenceagent-dev
     newTag: 4a9a4eaf1
