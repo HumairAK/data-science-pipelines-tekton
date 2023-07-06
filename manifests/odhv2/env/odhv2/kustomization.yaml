@@ -4,7 +4,7 @@ resources:
   - ../../base/pipeline/cluster-scoped
   - namespace-scoped
   - configs
-  - sccs
+#  - sccs
 
 patchesJson6902:
   - target:
@@ -64,6 +64,8 @@ patches:
               env:
                 - name: EXECUTIONTYPE
                   value: PipelineRun
+                - name: V2_LAUNCHER_IMAGE
+                  value: quay.io/hukhan/kfp-launcher:0777-perms-6
 - patch: |-
     apiVersion: apps/v1
     kind: Deployment
@@ -113,7 +115,7 @@ labels:
 images:
   - name: gcr.io/ml-pipeline/api-server
     newName: quay.io/hukhan/apiserver-dev
-    newTag: 35628146f
+    newTag: 0777-perms-6 # 35628146f
   - name: gcr.io/ml-pipeline/persistenceagent
     newName: quay.io/hukhan/persistenceagent-dev
     newTag: 4a9a4eaf1
@@ -125,9 +127,6 @@ images:
     newTag: 4a9a4eaf1
   - name: docker.io/aipipeline/swf-dev:4a9a4eaf1
     newName: quay.io/hukhan/swf-dev
-    newTag: 4a9a4eaf1
-  - name: docker.io/aipipeline/apiserver-dev:4a9a4eaf1
-    newName: quay.io/hukhan/apiserver-dev
     newTag: 4a9a4eaf1
   - name: docker.io/aipipeline/tekton-driver-dev:4a9a4eaf1
     newName: quay.io/hukhan/tekton-driver-dev
