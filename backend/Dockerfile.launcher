@@ -29,17 +29,6 @@ RUN GO111MODULE=on CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -tags netgo -l
 
 FROM alpine:3.17
 
-
-WORKDIR /
-RUN mkdir .cache .local minio /tmp/kfp
-RUN chgrp -R 0 /.cache && \
-    chmod -R g=u /.cache && \
-    chgrp -R 0 /tmp/kfp && \
-      chmod -R g=u /tmp/kfp && \
-    chgrp -R 0 /.local && \
-      chmod -R g=u /.local && \
-    chgrp -R 0 /minio && \
-      chmod -R g=u /minio
 RUN adduser -S appuser
 USER appuser
 
@@ -49,7 +38,5 @@ COPY --from=builder /bin/launcher-v2 /bin/launcher-v2
 ## Copy licenses and notices.
 #COPY --from=builder /tmp/licenses.csv /third_party/licenses.csv
 #COPY --from=builder /tmp/NOTICES /third_party/NOTICES
-
-
 
 ENTRYPOINT [ "/bin/launcher-v2" ]

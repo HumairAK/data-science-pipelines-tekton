@@ -65,7 +65,7 @@ patches:
                 - name: EXECUTIONTYPE
                   value: PipelineRun
                 - name: V2_LAUNCHER_IMAGE
-                  value: quay.io/hukhan/kfp-launcher:0777-perms-6
+                  value: quay.io/hukhan/kfp-launcher:0744
 - patch: |-
     apiVersion: apps/v1
     kind: Deployment

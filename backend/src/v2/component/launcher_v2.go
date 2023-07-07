@@ -712,11 +712,11 @@ func localPathForURI(uri string) (string, error) {
 }
 
 func prepareOutputFolders(executorInput *pipelinespec.ExecutorInput) error {
-	glog.Infof("0777-perms-6")
+	glog.Infof("0744")
 	for name, parameter := range executorInput.GetOutputs().GetParameters() {
 		dir := filepath.Dir(parameter.OutputFile)
-		glog.Infof("Line 717: Attempting to MkdirALL for: " + dir)
-		if err := os.MkdirAll(dir, 0777); err != nil {
+		glog.Infof("0744: Attempting to MkdirALL for: " + dir)
+		if err := os.MkdirAll(dir, 0755); err != nil {
 			return fmt.Errorf("failed to create directory %q for output parameter %q: %w", dir, name, err)
 		}
 	}
@@ -732,8 +732,8 @@ func prepareOutputFolders(executorInput *pipelinespec.ExecutorInput) error {
 			return fmt.Errorf("failed to generate local storage path for output artifact %q: %w", name, err)
 		}
 
-		glog.Infof("Line 734: Attempting to MkdirALL for: " + filepath.Dir(localPath))
-		if err := os.MkdirAll(filepath.Dir(localPath), 0777); err != nil {
+		glog.Infof("0744: Attempting to MkdirALL for: " + filepath.Dir(localPath))
+		if err := os.MkdirAll(filepath.Dir(localPath), 0744); err != nil {
 			return fmt.Errorf("unable to create directory %q for output artifact %q: %w", filepath.Dir(localPath), name, err)
 		}
 	}
