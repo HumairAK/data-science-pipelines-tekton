@@ -206,10 +206,10 @@ func (kts *kfptaskFS) constructTaskRun() (*tektonv1beta1.TaskRun, error) {
 		//	Name:      "local",
 		//	MountPath: "/.local",
 		//},
-		{
-			Name:      "minio",
-			MountPath: "/minio",
-		},
+		//{
+		//	Name:      "minio",
+		//	MountPath: "/minio",
+		//},
 	}
 	tr := &tektonv1beta1.TaskRun{
 		ObjectMeta: metav1.ObjectMeta{
@@ -225,24 +225,24 @@ func (kts *kfptaskFS) constructTaskRun() (*tektonv1beta1.TaskRun, error) {
 			Timeout:            kts.run.Spec.Timeout,
 			ServiceAccountName: kts.run.Spec.ServiceAccountName,
 			TaskSpec:           ktSpec.TaskSpec,
-			Workspaces: []tektonv1beta1.WorkspaceBinding{
-				//{
-				//	Name:     "outputs",
-				//	EmptyDir: &k8score.EmptyDirVolumeSource{},
-				//},
-				//{
-				//	Name:     "cache",
-				//	EmptyDir: &k8score.EmptyDirVolumeSource{},
-				//},
-				//{
-				//	Name:     "local",
-				//	EmptyDir: &k8score.EmptyDirVolumeSource{},
-				//},
-				{
-					Name:     "minio",
-					EmptyDir: &k8score.EmptyDirVolumeSource{},
-				},
-			},
+			//Workspaces: []tektonv1beta1.WorkspaceBinding{
+			//	//{
+			//	//	Name:     "outputs",
+			//	//	EmptyDir: &k8score.EmptyDirVolumeSource{},
+			//	//},
+			//	//{
+			//	//	Name:     "cache",
+			//	//	EmptyDir: &k8score.EmptyDirVolumeSource{},
+			//	//},
+			//	//{
+			//	//	Name:     "local",
+			//	//	EmptyDir: &k8score.EmptyDirVolumeSource{},
+			//	//},
+			//	{
+			//		Name:     "minio",
+			//		EmptyDir: &k8score.EmptyDirVolumeSource{},
+			//	},
+			//},
 		},
 	}
 
