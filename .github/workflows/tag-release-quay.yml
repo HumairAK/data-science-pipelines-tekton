@@ -44,7 +44,7 @@ jobs:
          skopeo login quay.io -u ${QUAY_ROBOT_USERNAME} -p ${QUAY_ROBOT_TOKEN}
       - name: Get latest tag name
         id: tag
-        run: echo "tag=$(git describe --tags --abbrev=0)" >> ${GITHUB_OUTPUT}
+        run: echo "tag=$(git tag | tail -n 1)" >> ${GITHUB_OUTPUT}
       - name: Get latest tag hash
         id: hash
         run: echo "hash=$(git rev-parse --short=7 ${{ steps.tag.outputs.tag }} )" >> ${GITHUB_OUTPUT}
