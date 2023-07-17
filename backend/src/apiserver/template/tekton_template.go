@@ -366,14 +366,9 @@ func (t *Tekton) injectDefaultScript(workflow util.Workflow, artifactScript stri
 	// Upload Artifacts if the artifact is enabled and the annoations are present
 	if hasArtifacts && len(artifacts) > 0 && trackArtifacts {
 		for _, artifact := range artifacts {
-			artifactBaseName := fmt.Sprintf("\"$(basename \"%s\")", artifact[1])
-			artifactPathName := fmt.Sprintf("\"%s/%s", common.GetPath4InternalResults(), artifactBaseName)
-			if artifact[0] == "mlpipeline-ui-metadata" || artifact[0] == "mlpipeline-metrics" {
-				artifactPathName = fmt.Sprintf("\"%s\"", artifact[1])
-			}
 			if len(artifact) == 2 {
 				artifactScript += fmt.Sprintf("push_artifact \"%s\" %s\n",
-					artifact[0], artifactPathName)
+					artifact[0], artifact[1])
 			} else {
 				glog.Warningf("Artifact annotations are missing for run %v.", workflow.Name)
 			}
