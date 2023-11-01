@@ -125,7 +125,7 @@ termcolor==1.1.0          # via tensorflow
 terminado==0.12.1         # via notebook
 testpath==0.5.0           # via nbconvert
 tfx-bsl==1.2.0            # via tensorflow-data-validation, tensorflow-model-analysis
-tornado==6.1              # via -r -, bokeh, ipykernel, jupyter-client, notebook, terminado
+tornado==6.3.3              # via -r -, bokeh, ipykernel, jupyter-client, notebook, terminado
 traitlets==4.3.3          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook
 typing-extensions==3.7.4.3  # via apache-beam, argon2-cffi, importlib-metadata, libcst, tensorflow, typing-inspect
 typing-inspect==0.7.1     # via libcst
@@ -133,7 +133,7 @@ uritemplate==3.0.1        # via google-api-python-client
 urllib3==1.26.7           # via requests
 wcwidth==0.2.5            # via prompt-toolkit
 webencodings==0.5.1       # via bleach
-werkzeug==2.0.2           # via tensorboard
+werkzeug==3.0.1           # via tensorboard
 wheel==0.37.1             # via astunparse, tensorboard, tensorflow
 widgetsnbextension==3.5.2  # via ipywidgets
 wrapt==1.12.1             # via tensorflow
